@@ -3,6 +3,7 @@ const path = require('path');
 const baseRules = require('eslint-config-airbnb-base/rules/style');
 const [_, ...restricted] = baseRules.rules['no-restricted-syntax'];
 
+
 module.exports = {
 	extends: 'airbnb',
 	parser: 'babel-eslint',
@@ -31,17 +32,16 @@ module.exports = {
 		'linebreak-style': 0,
 		'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
 		'no-restricted-syntax': [2,
-			...restricted.filter(
-				r => !['ForOfStatement'].includes(r.selector)
-		),
-	],
-	'no-tabs': 0,
+			...restricted.filter(r => !['ForOfStatement'].includes(r.selector)),
+		],
+		'no-tabs': 0,
 		'indent': [2, 'tab'],
 		'react/jsx-indent': [2, 'tab'],
 		'react/jsx-indent-props': [2, 'tab'],
 		'no-confusing-arrow': 0,
 		'global-require': 0,
 		'import/no-unresolved': [2, { commonjs: true }],
+		'import/no-extraneous-dependencies': 0,
 		'compat/compat': 2,
 		"max-len": [0, 200]
 	},
